@@ -37,109 +37,102 @@ class _MainScreenState extends State<MainScreen> {
           child: Column(
             children: <Widget>[
               Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: <Widget>[
-                      Card(
-                        margin: const EdgeInsets.all(32),
-                        elevation: 10,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              const Icon(
-                                Icons.opacity,
-                                size: 40,
+                child: Column(
+                  children: <Widget>[
+                    Card(
+                      margin: const EdgeInsets.all(16),
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            const Icon(
+                              Icons.opacity,
+                              size: 40,
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            const Text(
+                              'Salinity',
+                              style: TextStyle(
+                                fontSize: 24,
+                                color: Colors.black,
                               ),
-                              const SizedBox(
-                                height: 10,
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "${_salinity.toStringAsFixed(2)} ms/cm",
+                              style: const TextStyle(
+                                fontSize: 24,
+                                color: Colors.black,
                               ),
-                              const Text(
-                                'Salinity',
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "${_salinity.toStringAsFixed(2)} ms/cm",
-                                style: const TextStyle(
-                                  fontSize: 24,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
-                      Card(
-                        margin: const EdgeInsets.all(10),
-                        elevation: 10,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(32.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              const Icon(
-                                Icons.local_drink,
-                                size: 40,
+                    ),
+                    Card(
+                      margin: const EdgeInsets.all(8),
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(24),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            const Icon(
+                              Icons.local_drink,
+                              size: 40,
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            const Text(
+                              'pH',
+                              style: TextStyle(
+                                fontSize: 24,
+                                color: Colors.black,
                               ),
-                              const SizedBox(
-                                height: 10,
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              _pH.toStringAsFixed(2),
+                              style: const TextStyle(
+                                fontSize: 24,
+                                color: Colors.black,
                               ),
-                              const Text(
-                                'pH',
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                _pH.toStringAsFixed(2),
-                                style: const TextStyle(
-                                  fontSize: 24,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 32.0),
-                child: Container(
-                  decoration: const BoxDecoration(
-                    color: Colors.black12,
-                  ),
-                  child: Center(
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black54,
-                      ),
-                      onPressed: () {
-                        _getValues();
-                      },
-                      child: const Text(
-                        'Get Values',
-                        style: TextStyle(color: Colors.white, fontSize: 16),
-                      ),
+                padding: const EdgeInsets.only(bottom: 16.0),
+                child: Center(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.black54,
+                    ),
+                    onPressed: () {
+                      _getValues();
+                    },
+                    child: const Text(
+                      'Get Values',
+                      style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   ),
                 ),
